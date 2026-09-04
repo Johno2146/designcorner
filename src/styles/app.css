@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter/wght.css";
+@theme {
+  /* Navy palette */
+  --color-navy-950: #060f1d;
+  --color-navy-900: #0a1930;
+  --color-navy-800: #14213d;
+  --color-navy-700: #1e2f52;
+  --color-navy-600: #2a3f6b;
+  /* Orange accent */
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea5e05;
+  --color-accent-700: #c9520a;
+  --color-accent-800: #c2410c; /* dark enough for white text (≈4.9:1) */
+  --color-accent-900: #9a3412; /* hover state for primary buttons */
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px; /* keep sticky header off anchored headings */
+  }
+  body {
+    @apply bg-white text-gray-800 antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-navy-900;
+  }
+  /* Keyboard focus visibility */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-700);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ============================================================
+   Scroll-triggered reveals
+   Gated behind .js so server-rendered / no-JS output stays fully
+   visible (no flash of hidden content). Animations run on
+   transform + opacity only (GPU friendly).
+   ============================================================ */
+.reveal {
+  opacity: 1;
+  transition: opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-slow {
+  transition-duration: 0.95s;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(28px, -24px) scale(1.08);
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ============================================================
+   Hero entrance (on load) + ambient background accents
+   ============================================================ */
+.hero-fade {
+  animation: fade-up 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.hero-fade-slow {
+  animation: fade-up 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.hero-fade-fast {
+  animation: fade-up 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.hero-float {
+  animation: floaty 6s ease-in-out infinite;
+}
+.hero-blob {
+  animation: drift 16s ease-in-out infinite;
+}
+.pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* ============================================================
+   Micro-interactions
+   ============================================================ */
+/* Nav underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: var(--color-accent-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Footer link underline */
+.footer-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: var(--color-accent-400);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile menu drawer */
+.menu-enter {
+  animation: fade-in 0.2s ease both;
+}
+
+/* ============================================================
+   Accessible motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+  .js .reveal,
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
