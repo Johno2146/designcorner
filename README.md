@@ -56,7 +56,11 @@ bun install          # first time only
 bash ./static-export.sh
 ```
 
-What the script does: builds the app (`bun run build`), starts the site
+What the script does: builds the app with the **single-bundle static config**
+(`vite.static.config.ts` — every route is inlined into one entry JS file, so
+the exported site contains no per-route chunks and needs no dynamic
+`import()` at runtime; this makes it immune to shared-host quirks like
+"Failed to fetch dynamically imported module"), starts a dedicated render
 server, renders every page to plain HTML (saved as `index.html`,
 `services/index.html`, `portfolio/index.html`, etc.), copies all CSS, JS and
 images alongside, and adds a matching `404.html`. The result lands in
@@ -67,6 +71,7 @@ images alongside, and adds a matching `404.html`. The result lands in
 > `public_html` with the new `xneelo/` contents.
 
 Daily development still uses the normal commands — `bun run dev` for
-hot-reload and `bun run build` / `bun run start` for the SSR site served on
-port 3000. The static export is a separate step; the Xneelo folder is the
-only thing the static host needs.
+hot-reload and `bun run build` / `bun run start` for the code-split SSR site
+served on port 3000. The static export is a separate step (it never touches
+the :3000 preview server); the Xneelo folder is the only thing the static
+host needs.
