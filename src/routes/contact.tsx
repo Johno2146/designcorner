@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import PageHero from "~/components/PageHero";
-import { CtaAnchor } from "~/components/UI";
 import Reveal from "~/components/Reveal";
 import {
   ClockIcon,
@@ -131,13 +130,6 @@ function ContactPage() {
                 </div>
               </li>
             </ul>
-            <p className="mt-8 text-sm text-gray-500">
-              Prefer to message right away?{" "}
-              <CtaAnchor href={`https://wa.me/${CONTACT.whatsappLink}`}>
-                <span className="underline">WhatsApp us</span>
-              </CtaAnchor>{" "}
-              for the fastest response.
-            </p>
           </Reveal>
 
           {/* Form */}
