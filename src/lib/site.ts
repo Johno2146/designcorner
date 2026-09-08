@@ -140,8 +140,8 @@ export type Tier = {
 export const PRICING: Tier[] = [
   {
     name: "Starter Site",
-    onceOff: "R3,500",
-    monthly: "R500",
+    onceOff: "R2,999",
+    monthly: "R499",
     tagline: "A clean first website for a small business getting online.",
     features: [
       "5-page mobile-responsive site",
@@ -154,8 +154,8 @@ export const PRICING: Tier[] = [
   },
   {
     name: "Growth Site",
-    onceOff: "R6,000",
-    monthly: "R900",
+    onceOff: "R5,999",
+    monthly: "R899",
     tagline: "Our most popular package for businesses ready to grow.",
     features: [
       "Everything in Starter",
@@ -169,8 +169,8 @@ export const PRICING: Tier[] = [
   },
   {
     name: "E-commerce Site",
-    onceOff: "R10,000",
-    monthly: "R1,000",
+    onceOff: "R9,999",
+    monthly: "R999",
     tagline: "Sell online with a secure, easy-to-manage store.",
     features: [
       "Everything in Growth",
