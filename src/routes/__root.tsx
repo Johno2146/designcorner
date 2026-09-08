@@ -18,7 +18,11 @@ export const Route = createRootRoute({
           "Affordable, high quality websites for South African small businesses. Web design, development, e-commerce and SEO — built to get you found and grow.",
       },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    ],
   }),
   notFoundComponent: () => <div>Page not found</div>,
   component: RootComponent,
