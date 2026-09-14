@@ -14,7 +14,7 @@ function PortfolioPage() {
       <PageHero
         eyebrow="Our work"
         title="A few small businesses we've helped look great online"
-        subtitle="Real screenshots from real websites — small businesses we've had the pleasure to build for, across South Africa."
+        subtitle="Real screenshots from real websites. Small businesses we've had the pleasure to build for, across South Africa."
       />
 
       <section className="bg-white py-20">

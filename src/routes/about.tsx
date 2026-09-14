@@ -48,7 +48,7 @@ function AboutPage() {
                 So we built a different kind of web company. One that keeps things
                 affordable, fast and friendly. We help bakeries, plumbers,
                 boutiques, tour operators and service providers across South
-                Africa get online — with clean, mobile-friendly websites that
+                Africa get online with clean, mobile-friendly websites that
                 look professional and actually bring in enquiries.
               </p>
               <p className="mt-4 text-gray-600">
@@ -88,7 +88,7 @@ function AboutPage() {
               </h2>
               <p className="mt-4 text-lg text-gray-300">
                 Tell us about your business and we'll point you in the right
-                direction — free, friendly and no obligation.
+                direction, free, friendly and no obligation.
               </p>
               <div className="mt-8">
                 <CtaLink to="/contact">Get a Free Quote</CtaLink>
