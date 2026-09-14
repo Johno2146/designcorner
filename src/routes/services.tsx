@@ -22,17 +22,13 @@ function ServicesPage() {
       <PageHero
         eyebrow="Our services"
         title="Websites built for how small business actually works"
-        subtitle="Simple, affordable and reliable — from a first website to an online store, we look after design, build, hosting and search."
+        subtitle="Simple, affordable and reliable."
       />
 
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="space-y-6">
             {SERVICES.map((s, i) => {
-              const blurb =
-                s.title === "Web Development"
-                  ? "We turn the design into a fast, reliable website."
-                  : s.blurb;
               const features =
                 s.title === "Maintenance & Hosting" ? [] : s.features;
               return (
@@ -56,7 +52,7 @@ function ServicesPage() {
                         </h2>
                       </div>
                       <div className="md:border-l md:border-white/15 md:pl-8">
-                        <p className="text-gray-100">{blurb}</p>
+                        <p className="text-gray-100">{s.blurb}</p>
                         {features.length > 0 && (
                           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                             {features.map((f) => (

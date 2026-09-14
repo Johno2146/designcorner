@@ -88,7 +88,7 @@ function AboutPage() {
               </h2>
               <p className="mt-4 text-lg text-gray-300">
                 Tell us about your business and we'll point you in the right
-                direction, free, friendly and no obligation.
+                direction.
               </p>
               <div className="mt-8">
                 <CtaLink to="/contact">Get a Free Quote</CtaLink>

@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     name: "Sealed and Secured",
     category: "Security Seal Manufacturer",
     description:
-      "A professional site for a security seal manufacturer: clear products, a simple way to request a quote, and a look that wins trust from clients and partners alike.",
+      "A professional site for a security seal manufacturer with clear products, a simple way to request a quote, and a look that wins trust from clients and partners alike.",
     tag: "Web Design",
     image: "/portfolio-ssproc.webp",
     domain: "ssproc.co.za",
@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
     name: "Kaylee and Tenielle's Pet Services",
     category: "Pet Services",
     description:
-      "A warm, reassuring site for a pet services business: the services, the people, and a friendly way for pet owners to get in touch and book.",
+      "A warm, reassuring site for a pet services business with the services, the people, and a friendly way for pet owners to get in touch and book.",
     tag: "Pet Services",
     image: "/portfolio-ktps.webp",
     domain: "ktps.co.za",
@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
     name: "Do My Payroll",
     category: "Payroll Services",
     description:
-      "A clean, credible B2B site for a payroll services business: clear information, a reassuring design, and an easy path for clients to find out more and get in touch.",
+      "A clean, credible B2B site for a payroll services business with clear information, a reassuring design, and an easy path for clients to find out more and get in touch.",
     tag: "Web Design",
     image: "/portfolio-domy.webp",
     domain: "domypayroll.co.uk",

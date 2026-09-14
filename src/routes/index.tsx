@@ -56,6 +56,18 @@ function Hero() {
               </CtaLink>
             </div>
           </div>
+          <div className="mt-10 grid max-w-md grid-cols-3 gap-6 border-t border-white/10 pt-6">
+            {[
+              ["1 week", "average build"],
+              ["Free", "no obligation quote"],
+              ["100%", "local support"],
+            ].map(([num, label], i) => (
+              <div key={label} className="hero-fade" style={{ animationDelay: `${0.5 + i * 0.12}s` }}>
+                <div className="text-2xl font-bold text-white">{num}</div>
+                <div className="text-xs text-gray-400">{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="hidden lg:block">
@@ -104,15 +116,11 @@ function Hero() {
                     </span>
                   </span>
                   <span className="text-[10px] font-normal normal-case tracking-normal text-gray-500 transition-colors duration-300 group-hover:text-gray-300">
-                    A Design Corner build — real client site
+                    A Design Corner build, real client site
                   </span>
                 </p>
               </div>
             </a>
-            <div className="mt-6 flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-4 backdrop-blur">
-              <span className="text-3xl font-bold text-white">1 week</span>
-              <span className="text-sm text-gray-400">average build</span>
-            </div>
           </div>
         </div>
       </div>
