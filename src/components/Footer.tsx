@@ -12,18 +12,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center">
-              <div className="rounded-lg p-2">
-                <img
-                  src="/logo.png"
-                  alt="Design Corner"
-                  width={132}
-                  height={100}
-                  className="h-11 w-auto"
-                />
-              </div>
-            </div>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-400">
+            <p className="max-w-sm text-sm leading-relaxed text-gray-400">
               Affordable, high quality websites for South African small
               businesses. We build sites that help you look professional, get
               found, and grow.
